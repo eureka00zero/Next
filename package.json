@@ -1,14 +1,17 @@
 {
+  "homepage": "https://eureka00zero.github.io/next",
   "name": "next",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "gh-pages": "^3.2.0",
     "react": "^18",
     "react-dom": "^18",
     "next": "14.2.11"
