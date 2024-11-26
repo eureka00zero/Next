@@ -1,4 +1,6 @@
 import "./globals.css";
+import Sidebar from "../app/components/Slidebar";
+import "./style.css";
 
 export default function RootLayout({
   children,
@@ -8,8 +10,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        123
-        {children}
+        <div className="container">
+          <div className="main">
+            <Sidebar />
+            <section className="col note-viewer">{children}</section>
+          </div>
+        </div>
       </body>
     </html>
   );
