@@ -1,8 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import pic from "../public/logo.svg";
+import { getAllNotes } from "../lib/redis";
+import SlidebarNoteList from "./SlidebarNoteList";
 
 export default async function Sidebar() {
+  const notes = await getAllNotes();
   return (
     <>
       <section className="col sidebar">
@@ -22,7 +25,9 @@ export default async function Sidebar() {
         <section className="sidebar-menu" role="menubar">
           {/* SideSearchField */}
         </section>
-        <nav>{/* SidebarNoteList */}</nav>
+        <nav>
+          <SlidebarNoteList notes={notes} />
+        </nav>
       </section>
     </>
   );
